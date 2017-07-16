@@ -24,9 +24,30 @@ class Question(object):
         self.question = question
         self.correct_answer = correct_answer
 
+    def ask_and_evaluate(self):
+        """ """
+
+        user_answer = raw_input(self.question + " > ")
+
+        if user_answer == self.correct_answer:
+            return True
+        else:
+            return False
+
 
 class Exam(object):
+    """ Creates an exam. """
 
     def __init__(self, name, questions=[]):
         self.name = name.lower()
-        self.questions = questions
+        self.questions = []
+
+    def add_question(self, question):
+        """ """
+        self.questions.append(question)
+
+    def administer(self):
+        """ """
+
+        for question in self.questions():
+            ask_and_evaluate()
